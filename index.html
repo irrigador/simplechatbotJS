@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .chatbot-container {
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+    }
+
+    .chat-message {
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .chat-options {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .chat-option {
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      background-color: #eaeaea;
+    }
+
+    .chat-option:hover {
+      background-color: #d5d5d5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="chatbot-container">
+    <div id="chat-message" class="chat-message">Seja bem vindo! *nome do cliente* ao atendimento da *empresa generica* <p> Olá *nome cliente* como podemos ajudar? Clique em umas das opções abaixo:</p></div>
+    <ul id="chat-options" class="chat-options">
+      <li class="chat-option" onclick="showMenu2();">1 - &#128202 Financeiro</li>
+      <li class="chat-option" onclick="showMenu3()">2 - &#128184 Vendas</li>
+      <li class="chat-option" onclick="showMenu4()">3 -  &#128206 Suporte</li>
+    </ul>
+  </div>
+
+  <script>
+    function showMenu2() {
+      const chatMessage = document.getElementById('chat-message');
+      const chatOptions = document.getElementById('chat-options');
+
+      chatMessage.textContent = 'Menu2:  Em que podemos ajudar:';
+      chatOptions.innerHTML = `
+        <li class="chat-option" onclick="showMenu5();">1 - Segunda via de fatura</li>
+        <li class="chat-option" onclick="showconluidaMessage();">2 - Duvida sobre boleto</li>
+        <li class="chat-option" onclick="liberarsinal();">3 - Liberar sinal</li>
+        <li class="chat-option" onclick="showFinalMessage();">4 - Finalizar Atendimento</li>
+
+      `;
+    }
+    
+    function showMenu3() {
+      const chatMessage = document.getElementById('chat-message');
+      const chatOptions = document.getElementById('chat-options');
+
+      chatMessage.textContent = 'Menu2: Em que podemos ajudar:';
+      chatOptions.innerHTML = `
+        <li class="chat-option" onclick="showconluidaMessage();">1 - Contratar Pacotes</li>
+        <li class="chat-option" onclick="showconluidaMessage();">2 - Aumentar Pacotes</li>
+        <li class="chat-option" onclick="showconluidaMessage();">3 - Falar com um vendedor</li>
+        <li class="chat-option" onclick="showFinalMessage();">4 - Finalizar Atendimento</li>
+
+      `;
+    }
+    
+    function showMenu4() {
+      const chatMessage = document.getElementById('chat-message');
+      const chatOptions = document.getElementById('chat-options');
+
+      chatMessage.textContent = `Menu2:  Em que podemos ajudar:`;
+      chatOptions.innerHTML = `
+        <li class="chat-option" onclick="showconluidaMessage();">1 - Sem sinal</li>
+        <li class="chat-option" onclick="showconluidaMessage();">2 - Problemas no chip</li>
+        <li class="chat-option" onclick="showconluidaMessage();">3 - Problemas em geral</li>
+        <li class="chat-option" onclick="showFinalMessage();">4 - Finalizar Atendimento</li>
+
+      `;
+    }
+    
+      function showMenu5() {
+      const chatMessage = document.getElementById('chat-message');
+      const chatOptions = document.getElementById('chat-options');
+
+      chatMessage.textContent = 'Menu3: Assuntos financeiros:';
+      chatOptions.innerHTML = `
+        <li class="chat-option" onclick="showconluidaMessage();">1 - detalhamento de fatura</li>
+        <li class="chat-option" onclick="showconluidaMessage();">2 - Envio por e-mail</li>
+        <li class="chat-option" onclick="showconluidaMessage();">3 - Envio por whatsapp</li>
+        <li class="chat-option" onclick="showconluidaMessage();">4 - Finalizar Atendimento</li>
+
+      `;
+    }
+    
+      function showconluidaMessage() {
+      const chatMessage = document.getElementById('chat-message');
+      const chatOptions = document.getElementById('chat-options');
+
+      chatMessage.textContent = 'Essa tela mostra o que o cliente pediu o sistema envia as solicitações mediante o que existir no banco de dados';
+      chatOptions.innerHTML = '';
+    }
+    
+    
+        function showFinalMessage() {
+      const chatMessage = document.getElementById('chat-message');
+      const chatOptions = document.getElementById('chat-options');
+
+      chatMessage.textContent = 'Atendimento Finalizado';
+      chatOptions.innerHTML = '';
+    }
+    
+        function liberarsinal() {
+      const chatMessage = document.getElementById('chat-message');
+      const chatOptions = document.getElementById('chat-options');
+
+      chatMessage.textContent = 'Menu3: A liberação de sinal é feita a cada 30 dias aperte no botão para liberar o sinal:';
+      chatOptions.innerHTML = `
+        <li class="chat-option" onclick="showconluidaMessage();">1 - Liberação de confiança</li>
+      
+
+      `;
+    }
+  </script>
+</body>
+
+</html>
